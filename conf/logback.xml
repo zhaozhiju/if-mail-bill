@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+	<property name="log.base" value="/opt/logs/if-mail-bill/" />
+	<property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%level] - %msg%n" />
+	
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder charset="UTF-8">
+			<pattern>${pattern}</pattern>
+			<outputPatternAsHeader>false</outputPatternAsHeader>
+		</encoder>
+	</appender>
+	
+	<appender name="log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.base}/log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.base}/log.%d{yyyyMMddHH}</fileNamePattern>
+		</rollingPolicy>
+		<encoder charset="UTF-8">
+			<pattern>${pattern}</pattern>
+			<outputPatternAsHeader>false</outputPatternAsHeader>
+		</encoder>
+	</appender>
+
+	<appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.base}/error</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.base}/error.%d{yyyyMMddHH}</fileNamePattern>
+		</rollingPolicy>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>error</level>
+		</filter>
+		<encoder charset="UTF-8">
+			<pattern>${pattern}</pattern>
+			<outputPatternAsHeader>false</outputPatternAsHeader>
+		</encoder>
+	</appender>
+	<!-- 
+	<appender name="time" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.base}/time.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.base}/time.log.%d{yyyyMMddHH}</fileNamePattern>
+		</rollingPolicy>
+		<encoder charset="UTF-8">
+			<pattern>${pattern}</pattern>
+			<outputPatternAsHeader>false</outputPatternAsHeader>
+		</encoder>
+	</appender>
+	
+	<appender name="monitor" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.base}/monitor.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.base}/monitor.log.%d{yyyyMMdd}</fileNamePattern>
+		</rollingPolicy>
+		<encoder charset="UTF-8">
+			<pattern>${pattern}</pattern>
+			<outputPatternAsHeader>false</outputPatternAsHeader>
+		</encoder>
+	</appender>
+ 	-->
+	<logger name="net" level="info">
+		<appender-ref ref="log" />
+	</logger>
+
+	<root level="info">
+		<appender-ref ref="stdout" />
+		<appender-ref ref="error" />
+	</root>
+
+</configuration>

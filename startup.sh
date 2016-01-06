@@ -1,0 +1,1 @@
+nohup java -Xms512M -Xmx1024M -Dorg.mortbay.util.URI.charset=UTF-8 -jar /opt/project/if-mail-bill/if-mail-bill-1.0.0-SNAPSHOT.jar >/dev/null 2>&1 &
