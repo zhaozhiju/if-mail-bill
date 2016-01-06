@@ -1,3 +1,4 @@
+
 ## zzj 2015/01/06 am 10:00:00 asd_0612
 drop table T_MAIL_BALANCE_DETAIL cascade constraints;
 -- Create table
