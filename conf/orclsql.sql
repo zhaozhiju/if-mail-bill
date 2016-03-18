@@ -1,4 +1,5 @@
---20160318 44444
+
+--20160318 33333
 drop table T_MAIL_BALANCE_DETAIL cascade constraints;
 -- Create table
 create table T_MAIL_BALANCE_DETAIL
