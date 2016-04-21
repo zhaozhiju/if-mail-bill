@@ -3,7 +3,7 @@ package net.umpay.mailbill.api.httpmail;
 import net.umpay.mailbill.util.exception.MailBillException;
 
 /**
- * 抓取基金平台数据
+ * 抓取基金平台数据 
  * 
  * @author zhaozj
  * @date 2015-9-21 上午11:51:16
